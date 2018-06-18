@@ -15,7 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(query)
-    query.empty? ? self.all : self.all.grep(query.capitalize)
+    query.empty? ? self.all : self.all.find_all { |name| name.include?(query.capitalize) }
   end
 
 end
