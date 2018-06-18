@@ -1,5 +1,5 @@
 <h2>Search Results</h2>
 
-<% Student.search(query).each do |student| %>
+<%= @students.each do |student| %>
   <%= render partial: 'student', locals: {student: student}%>
 <% end %>
